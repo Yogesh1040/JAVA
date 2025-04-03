@@ -1,37 +1,26 @@
-package assignment1;
-
-public class Person 
-{
-	private int age =18;
-	private String name;
+package p1;
+import java.util.Scanner;
+public class Person {
 	
-	public Person()
+	protected String fname;
+	protected String lname;
+	protected int age;
+	
+	public Scanner s = new Scanner(System.in);
+	
+	public void getData()
 	{
-		age=18;
-		
-	}
-	public Person(String nm)
-	{
-		age=18;
-		name=nm;
-	}
-	public Person(String nm,int a)
-	{
-		name=nm;
-		age=a;
-	}
-	public void display()
-	{
-		System.out.println("Name - "+name+" Age - "+age);
+		System.out.println("Enter first name: ");
+		fname=s.next();
+		System.out.println("Enter last name: ");
+		lname=s.next();
+		System.out.println("Enter age: ");
+		age=s.nextInt();
 	}
 	
-	public static void main(String[] args) {
-		Person p = new Person();
-		Person p1= new Person("Yash");
-		Person p2= new Person("Yash",34);
-		p.display();
-		p1.display();
-		p2.display();
+	public void displayData()
+	{
+		System.out.println("["+"Name: "+fname+" "+lname+" "+"age: "+age+"]");
 	}
 
 }

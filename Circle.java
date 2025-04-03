@@ -1,36 +1,14 @@
-package assignment1;
+package p1;
 
-import java.util.Scanner;
-
-public class Circle 
-{
-	private float radius;
-	private float area;
-	
-	public void inIt(float rad)
+public class Circle extends Shape
+{ 
+	public Circle(int rad)
 	{
-		radius=rad;
+		super(rad);
 	}
-	
-	public float calArea()
+	public void calArea()
 	{
-		area=(float)(3.14*radius*radius);
-		return area;
+		float Area=(float)3.14*rad*rad;
+		System.out.println("Area of circle - "+Area);
 	}
-	
-	public void display()
-	{
-		System.out.println("Area of circle is "+calArea());
-	}
-	
-	public static void main(String args[])
-	{
-		Circle c1=new Circle();
-		Scanner s =new Scanner(System.in);
-		System.out.println("Enter a radius - ");
-		float rad=s.nextFloat();
-		c1.inIt(rad);
-		c1.display();
-	}
-
 }
