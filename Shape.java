@@ -1,6 +1,6 @@
 package p1;
 
-public class Shape 
+public abstract class Shape 
 { 
 	protected int rad;
 	protected int len,br;
@@ -16,8 +16,5 @@ public class Shape
 		this.br=br;
 	}
 	
-	public void calArea()
-	{
-		
-	}
+	public abstract void calArea();
 }

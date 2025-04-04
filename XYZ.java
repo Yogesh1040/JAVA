@@ -1,55 +1,34 @@
-package assignment1;
+package assignment2;
+
 import java.util.Scanner;
+
 public class XYZ 
 {
-	
-	public float totalAmt(Product pro[])
-	{
-		float total=0;
-		for(int i=0;i<5;i++)
+	public static void main(String[] args) {
+		OneBHK arr[]=new OneBHK[3];
+		Scanner s=new  Scanner(System.in);
+		System.out.println("Enter Details");
+		for(int i=0;i<arr.length;i++)
 		{
-			total=total+(pro[i].getPrice()*pro[i].getQuantity());
-		}
-		return total;
-	}
-	public static float highestPrice(Product pro[])
-	{
-		float h=0.0f;
-		for(int i=0;i<5;i++)
-		{
-			if(h<pro[i].getPrice())
-				h=pro[i].getPrice();
-		}
-		return h;
-	}
-	public static void main(String args[])
-	{
-		Scanner s = new Scanner(System.in);
-		System.out.println("Enter Five product details");
-		Product pro[]= new Product[5];
-		XYZ x=new XYZ();
-		for(int i=0;i<pro.length;i++)
-		{
-			System.out.println("Enter product id : ");
-			int pid=s.nextInt();
-			System.out.println("Enter product price : ");
-			float price=s.nextFloat();
-			System.out.println("Enter product quantity : ");
-			int quantity=s.nextInt();
+			System.out.println("Enter room1 area: ");
+			int rArea=s.nextInt();
+			System.out.println("Enter room2 area: ");
+			int room2area=s.nextInt();
+			System.out.println("Enter hall area: ");
+			int hArea=s.nextInt();
+			System.out.println("Enter Price : ");
+			int price=s.nextInt();
 			
-			pro[i]=new Product(pid,price,quantity);
+			arr[i]=new TwoBHK(rArea,hArea,price,room2area);
 		}
 		
-		
-		
-		
-		for(int i=0;i<5;i++)
+		for(int i=0;i<arr.length;i++)
 		{
-			System.out.println(pro[i] );
-			
+			System.out.println("-----------Flat "+(i+1));
+			arr[i].show();
 		}
-		System.out.println("Higest price ["+highestPrice(pro)+"]");
-		System.out.println("Total - "+x.totalAmt(pro));
+		
+		System.out.println("total no of flats: "+arr.length);
+				
 	}
 }
-	
