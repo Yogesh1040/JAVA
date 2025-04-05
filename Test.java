@@ -1,20 +1,30 @@
-package p2;
+package assignment3;
 
-//Anonymous Inner class
+import java.util.Scanner;
 
-public class Test extends Outer
+public class Test 
 {
 	public static void main(String[] args) {
 		
-		Coffee c=new Coffee(){
-			@Override
-			public void taste()
-			{
-				System.out.println("Sweet");
-			}
-		};
-		c.taste();
-		System.out.println(c.getClass());
+		Scanner s =new Scanner(System.in);
+		System.out.println("Enter your Choice (Circle OR Factorial) : ");
+		String choice=s.next();
+		System.out.println("Enter data : ");
+		int data=s.nextInt();
+		
+		if(choice.equals("Circle"))
+		{
+			Processor p=new Circle();
+			p.data=data;
+			p.process();
+		}
+		else if(choice.equals("Factorial"))
+		{
+			Processor p=new Factorial();
+			p.data=data;
+			p.process();
+		}
+	
 	}
-
+	
 }

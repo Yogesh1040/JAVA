@@ -1,14 +1,12 @@
-package p1;
+package assignment3;
 
-public class Circle extends Shape
-{ 
-	public Circle(int rad)
+public class Circle extends Processor
+{
+	@Override
+	public void process()
 	{
-		super(rad);
+		
+		System.out.println("Area of Cirlce having radius "+data+" is "+(float)3.14*data*data);
 	}
-	public void calArea()
-	{
-		float Area=(float)3.14*rad*rad;
-		System.out.println("Area of circle - "+Area);
-	}
+
 }
