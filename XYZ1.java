@@ -1,38 +1,34 @@
-package assignment2;
+package assignment3;
 
 import java.util.Scanner;
 
 public class XYZ1 {
 	public static void main(String[] args) {
+
 		Scanner s = new Scanner(System.in);
-		Faculty fac[] = new Faculty[4];
-		System.out.println("Enter Full Time Faculty Details - ");
-		for (int i = 0; i < 2; i++) {
-			System.out.println("Enter Faculty id - ");
-			int faculty_id = s.nextInt();
-			System.out.println("Enter Basic  - ");
-			int basic = s.nextInt();
-			System.out.println("Enter Allowance - ");
-			int allowance = s.nextInt();
+		Employee1 ep[] = new Employee1[5];
+		Employee1 ep1 = null;
+		System.out.println("Enter Employee Details : ");
+		for (int i = 0; i < ep.length; i++) {
+			System.out.println("Enter Employee id : ");
+			int empId = s.nextInt();
+			System.out.println("Enter Employee Name : ");
+			String empName = s.next();
+			System.out.println("Enter Employee Salary : ");
+			int salary = s.nextInt();
 
-			fac[i] = new FullTimeFaculty(faculty_id, basic, allowance);
+			ep[i] = new Employee1(empId, empName, salary);
+			ep1 = ep[i];
+			for (int j = 0; j < i; j++) {
+				if (ep1.equals(ep[j])) {
+					System.out.println("EmpId already exits Enter new Employee ");
+					i--;
+				}
+			}
 		}
-
-		System.out.println("Enter Part Time Faculty Details - ");
-		for (int i = 2; i < 4; i++) {
-			System.out.println("Enter Faculty id - ");
-			int faculty_id = s.nextInt();
-			System.out.println("Enter Hours  - ");
-			int hour = s.nextInt();
-			System.out.println("Enter Rate - ");
-			int rate = s.nextInt();
-
-			fac[i] = new FullTimeFaculty(faculty_id, hour, rate);
-		}
-
-		for (int i = 0; i < 4; i++) {
-			fac[i].calSal();
-			fac[i].display();
+		System.out.println("---------EMPLOYEE DETAILS---------");
+		for (int i = 0; i < ep.length; i++) {
+			System.out.println(ep[i]);
 		}
 	}
 

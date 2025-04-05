@@ -1,34 +1,32 @@
-package assignment2;
+package assignment3;
 
 import java.util.Scanner;
 
 public class XYZ 
 {
 	public static void main(String[] args) {
-		OneBHK arr[]=new OneBHK[3];
-		Scanner s=new  Scanner(System.in);
-		System.out.println("Enter Details");
-		for(int i=0;i<arr.length;i++)
-		{
-			System.out.println("Enter room1 area: ");
-			int rArea=s.nextInt();
-			System.out.println("Enter room2 area: ");
-			int room2area=s.nextInt();
-			System.out.println("Enter hall area: ");
-			int hArea=s.nextInt();
-			System.out.println("Enter Price : ");
-			int price=s.nextInt();
-			
-			arr[i]=new TwoBHK(rArea,hArea,price,room2area);
-		}
 		
-		for(int i=0;i<arr.length;i++)
-		{
-			System.out.println("-----------Flat "+(i+1));
-			arr[i].show();
-		}
+		Scanner s=new Scanner(System.in);
+		System.out.println("Enter Employee Details :");
+		System.out.println("Enter Employee id : ");
+		int empId=s.nextInt();
+		System.out.println("Enter Employee name : ");
+		String empName=s.next();
+		System.out.println("Enter Employee Salary : ");
+		int salary=s.nextInt();
+		System.out.println("Enter Product Details :");
+		System.out.println("Enter Product id : ");
+		int pid=s.nextInt();
+		System.out.println("Enter Product Price : ");
+		float price=s.nextFloat();
+		System.out.println("Enter Product Quantity :");
+		int quantity=s.nextInt();
 		
-		System.out.println("total no of flats: "+arr.length);
-				
+		Taxable e=new Employee(empId,empName,salary);
+		Taxable p=new Product(pid,price,quantity);
+		
+		e.calTax();
+		p.calTax();
 	}
+
 }

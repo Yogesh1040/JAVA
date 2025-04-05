@@ -1,58 +1,23 @@
-package p1;
+package assignment3;
 
-public class Employee {
-	public int empid;
-	public String empname;
+public class Employee implements Taxable
+{
+	private int empId;
+	private String empName;
+	private int salary;
 	
-	public Employee()
+	public Employee(int empId, String empName, int salary) 
 	{
-		empid=101;
-		empname="prasad";
+		this.empId=empId;
+		this.empName=empName;
+		this.salary=salary;
+		
 	}
-	public Employee(int empid,String empname)
-	{
-		this.empid=empid;
-		this.empname=empname;
-	}
+
 	@Override
-	public String toString() {
-		return "Employee [empid=" + empid + ", empname=" + empname + "]";
-	}
-	
-	public boolean equals(Object ob)
+	public void calTax()
 	{
-		Employee e=(Employee)ob;
-		if((this.empid==e.empid) && (this.empname.equals(e.empname)))
-			return true;
-		else
-			return false;
+		System.out.println("Income Tax on Yearly Salary is "+(float)12*salary*incomeTax);
 	}
-	
-	@Override
-	public int hashCode()
-	{
-		return this.empid+1;
-	}
-	
-	
-	public static void main(String[] args) {
-		Employee e1=new Employee(101,"Prasad");
-		Employee e2=new Employee(101,"Prasad");
-		
-		if(e1==e2)
-			System.out.println("equal");
-		else
-			System.out.println("not equal");
-		
-		if(e1.equals(e2))
-			System.out.println("equal");
-		else
-			System.out.println("not equal");
-		
-		System.out.println(e1.hashCode());
-		System.out.println(e2.hashCode());
-	}
-	
-	
-		
+
 }

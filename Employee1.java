@@ -1,22 +1,36 @@
+package assignment3;
 
-public class Employee1 {
-	private String name;
-	private int id;
-	private Date doj;
+public class Employee1 
+{
+	protected int empId;
+	private String empName;
+	private int salary;
 	
-	public Employee1(String name,int id,Date doj)
+	public Employee1(int empId, String empName, int salary)
 	{
-		this.name=name;
-		this.id=id;
-		this.doj=doj;
+		this.empId=empId;
+		this.empName=empName;
+		this.salary=salary;
 	}
+	
+	@Override
 	public String toString()
 	{
-		return "Employee ["+name+" "+id+" "+doj+"]";
+		return "Employee [ Id - "+empId+" Name -"+empName+" Salary - "+salary+" ]";
 	}
-	public static void main(String[] args) {
-		Employee1 e1=new Employee1("Yogesh",101,new Date(12,6,2025));
-		System.out.println(e1);
+	
+	@Override
+	public boolean equals(Object ob)
+	{
+		Employee1 e=(Employee1)ob;
+		if(this.empId==e.empId)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
 
 }

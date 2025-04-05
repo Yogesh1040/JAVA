@@ -17,12 +17,14 @@ public class Test
 			Processor p=new Circle();
 			p.data=data;
 			p.process();
+			p.showData();
 		}
 		else if(choice.equals("Factorial"))
 		{
 			Processor p=new Factorial();
 			p.data=data;
 			p.process();
+			p.showData();
 		}
 	
 	}
