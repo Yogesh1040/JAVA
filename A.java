@@ -1,16 +1,18 @@
-package p1;
+package p2;
 
-public class A 
+public class A extends Coffee
 {
-	private int no;
-	public A()
+	@Override
+	public void taste()
 	{
-		no=10;
-	}
-	protected void getNo()
-	{
-		System.out.println("No - "+no);
+		System.out.println("AA");
 	}
 	
+	public static void main(String[] args) {
+		
+		Coffee c=new A();
+		c.taste();
+		System.out.println(c.getClass());
+	}
 
 }

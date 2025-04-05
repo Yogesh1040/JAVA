@@ -1,29 +1,20 @@
-package assignment1;
+package p2;
 
-import java.util.Scanner;
+//Anonymous Inner class
 
-public class Test 
+public class Test extends Outer
 {
-	
 	public static void main(String[] args) {
 		
-		Scanner s=new Scanner(System.in);
-		
-		System.out.println("Enter length of Tile - ");
-		float tilelength=s.nextFloat();
-		
-		Tile t=new Tile(tilelength);
-		
-		
-		System.out.println("Enter length and width of Floor - ");
-		float floorlen=s.nextFloat();
-		float floorwid=s.nextFloat();
-		
-		Floor f=new Floor(floorlen,floorwid);
-		
-		f.totalTiles(t);
-		
-		
+		Coffee c=new Coffee(){
+			@Override
+			public void taste()
+			{
+				System.out.println("Sweet");
+			}
+		};
+		c.taste();
+		System.out.println(c.getClass());
 	}
 
 }
