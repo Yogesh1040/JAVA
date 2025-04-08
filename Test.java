@@ -1,32 +1,27 @@
-package assignment3;
+package p3;
 
-import java.util.Scanner;
+import java.util.Arrays;
+import java.util.List;
 
 public class Test 
 {
-	public static void main(String[] args) {
-		
-		Scanner s =new Scanner(System.in);
-		System.out.println("Enter your Choice (Circle OR Factorial) : ");
-		String choice=s.next();
-		System.out.println("Enter data : ");
-		int data=s.nextInt();
-		
-		if(choice.equals("Circle"))
+	public static void getSum(List<? extends Number> i)
+	{
+		System.out.println(i);
+		int a=0;
+		for(Number n:i)
 		{
-			Processor p=new Circle();
-			p.data=data;
-			p.process();
-			p.showData();
+			Integer sum=(Integer)n;
+			a+=sum;
 		}
-		else if(choice.equals("Factorial"))
-		{
-			Processor p=new Factorial();
-			p.data=data;
-			p.process();
-			p.showData();
-		}
-	
+		System.out.println("Sum - "+a);
 	}
 	
+	public static void main(String[] args) {
+		
+		List<Integer> i=Arrays.asList(1,2,3,4,5,6);
+		Test.getSum(i);
+				
+	}
+
 }

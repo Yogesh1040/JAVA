@@ -1,23 +1,42 @@
-package assignment3;
+package p3;
 
-public class Employee implements Taxable
+public class Employee implements Comparable
 {
 	private int empId;
 	private String empName;
-	private int salary;
-	
-	public Employee(int empId, String empName, int salary) 
-	{
-		this.empId=empId;
-		this.empName=empName;
-		this.salary=salary;
-		
+	public Employee(int empId, String empName) {
+		super();
+		this.empId = empId;
+		this.empName = empName;
 	}
-
+	public int getEmpId() {
+		return empId;
+	}
+	public void setEmpId(int empId) {
+		this.empId = empId;
+	}
+	public String getEmpName() {
+		return empName;
+	}
+	public void setEmpName(String empName) {
+		this.empName = empName;
+	}
 	@Override
-	public void calTax()
+	public String toString() {
+		return "Employee [empId=" + empId + ", empName=" + empName + "]";
+	}
+	
+	@Override
+	public int compareTo(Object o)
 	{
-		System.out.println("Income Tax on Yearly Salary is "+(float)12*salary*incomeTax);
+		Employee e=(Employee)o;
+		
+		if(this.empId>e.empId)
+			return -1;
+		if(this.empId<e.empId)
+			return 1;
+		else 
+			return 0;
 	}
 
 }

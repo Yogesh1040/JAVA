@@ -1,21 +1,23 @@
-package p2;
+package p3;
+
+import java.util.ArrayList;
 
 public class Demo 
 {
-	public void get()
-	{
-		msg();
-	}
-	public void msg()
-	{
-		int a=10/0;
-		System.out.println("a "+a);
-	}
-	
 	public static void main(String[] args) {
 		
-		Demo d=new Demo();
-		d.get();
+		ArrayList a=new ArrayList();
+		a.add(10);
+		System.out.println(a);
+		System.out.println(a.add(20));
+		a.add("abc");
+		a.add(10);
+		for(Object p:a)
+		{
+			System.out.println(p);
+		}
+		
+		String str=(String)a.get(0);
 	}
 
 }
