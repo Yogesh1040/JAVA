@@ -1,12 +1,12 @@
-package p3;
+package p4;
 
 import java.util.Comparator;
 
 
-public class MyComparator implements Comparator<Integer>
+public class MyComparator implements Comparator<Character>
 {
 	@Override
-	public int compare(Integer o1,Integer o2)
+	public int compare(Character o1,Character o2)
 	{
 		if(o1>o2)
 		{

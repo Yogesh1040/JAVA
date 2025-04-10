@@ -1,23 +1,16 @@
-package p3;
+package p4;
 
-import java.util.ArrayList;
+import java.io.IOException;
 
 public class Demo 
 {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		
-		ArrayList a=new ArrayList();
-		a.add(10);
-		System.out.println(a);
-		System.out.println(a.add(20));
-		a.add("abc");
-		a.add(10);
-		for(Object p:a)
-		{
-			System.out.println(p);
-		}
+		int i = System.in.read();
+		System.out.println(i);
+		System.out.println((char)i);
 		
-		String str=(String)a.get(0);
+		System.err.println("YASH");
 	}
 
 }
